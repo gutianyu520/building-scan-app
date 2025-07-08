@@ -173,11 +173,11 @@ body {
 
 /* Styles for BuildingPhotographyPage */
 .photography-frame {
-  width: 80vw; /* 4/5 of viewport width */
-  max-width: 500px; /* Max width to prevent it from being too large on desktop */
+  width: 80%; /* 80% of its parent (.page-container's content box) */
+  /* max-width: 500px; /* Removed, as parent will constrain it effectively */
   aspect-ratio: 3 / 2; /* Modern way to set aspect ratio (width / height) */
 
-  margin: 0 auto 20px auto; /* Center the frame and add bottom margin */
+  margin: 20px auto; /* Center the frame and add vertical margin */
   border: 3px dashed #007bff; /* Thick dashed blue border */
   background-image:
     linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
@@ -197,8 +197,10 @@ body {
 /* Fallback for aspect-ratio for older browsers - not perfect, but an attempt */
 @supports not (aspect-ratio: 3 / 2) {
   .photography-frame {
-    height: calc(500px * 2 / 3); /* Approximate height based on max-width */
-     /* If vw is smaller, this might not be 2/3 of 80vw. This is a limitation without container queries. */
+    /* Fallback height: 2/3 of its max possible width (80% of 320px = 256px) */
+    /* Max content width of .page-container is 320px (400px container - 40px padding - 40px page-container padding) */
+    /* Frame width is 80% of that, so 0.8 * 320px = 256px */
+    height: calc(256px * 2 / 3);
   }
 }
 
