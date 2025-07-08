@@ -27,6 +27,27 @@ function BuildingPhotographyPage() {
         撮影開始
       </button>
 
+      <div className="status-grid">
+        <div className="status-indicator">
+          <span role="img" aria-label="position">📍</span> 位置: <span className="status-value">自動検出</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="sharpness">👁️‍🗨️</span> 鮮明度: <span className="status-value">良好</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="brightness">💡</span> 明るさ: <span className="status-value">適正</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="distance">📏</span> 距離: <span className="status-value">5m</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="angle">📐</span> 角度: <span className="status-value">正面</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="focus">🎯</span> 焦点: <span className="status-value">合致</span>
+        </div>
+      </div>
+
       <Link to="/select-disaster" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>災害種類選択に戻る</Link>
     </div>
   );
