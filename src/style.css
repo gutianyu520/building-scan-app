@@ -88,6 +88,15 @@ body {
   background-color: #b3b3b3; /* Slightly darker gray for hover */
 }
 
+.settings-button {
+  background-color: #20c997; /* Teal color for "設定" button */
+  color: white; /* White text for good contrast on teal */
+}
+
+.settings-button:hover {
+  background-color: #1aa87f; /* Slightly darker teal for hover */
+}
+
 .history-preview {
   margin-top: 30px;
   text-align: left;
