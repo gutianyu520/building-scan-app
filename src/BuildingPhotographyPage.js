@@ -18,15 +18,7 @@ function BuildingPhotographyPage() {
         </div>
       </div>
 
-      {/* Placeholder for actual camera functionality/upload button */}
-      <button
-        className="nav-button"
-        style={{backgroundColor: '#28a745', marginTop: '30px'}}
-        onClick={() => alert('撮影機能は未実装です。')}
-      >
-        撮影開始
-      </button>
-
+      {/* Placeholder for actual camera functionality/upload button will be moved below status grid */}
       <div className="status-grid">
         <div className="status-indicator">
           <span role="img" aria-label="position">📍</span> 位置: <span className="status-value">自動検出</span>
@@ -46,6 +38,21 @@ function BuildingPhotographyPage() {
         <div className="status-indicator">
           <span role="img" aria-label="focus">🎯</span> 焦点: <span className="status-value">合致</span>
         </div>
+      </div>
+
+      <div className="action-buttons-container">
+        <button
+          className="nav-button photo-action-button"
+          onClick={() => alert('撮影機能は未実装です。')}
+        >
+          <span role="img" aria-label="camera icon">📷</span> 撮影開始
+        </button>
+        <button
+          className="nav-button photo-action-button album-button"
+          onClick={() => alert('アルバム機能は未実装です。')}
+        >
+          <span role="img" aria-label="album icon">🖼️</span> アルバム
+        </button>
       </div>
 
       <Link to="/select-disaster" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>災害種類選択に戻る</Link>

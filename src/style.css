@@ -255,3 +255,42 @@ body {
   color: #333;
   margin-left: 4px; /* Small space before the value */
 }
+
+/* Styles for Action Buttons on BuildingPhotographyPage */
+.action-buttons-container {
+  display: flex;
+  justify-content: space-around; /* Distribute space around buttons */
+  align-items: center;
+  margin-top: 30px; /* Space above the button container */
+  gap: 15px; /* Gap between buttons if they wrap or for visual separation */
+}
+
+.photo-action-button {
+  /* .nav-button provides base styling like padding, border-radius, text stuff */
+  /* We might want to override width if .nav-button's 66% is too wide for two buttons side-by-side */
+  width: 45%; /* Each button takes up close to half the space, allowing for gap */
+  max-width: 180px; /* Max width for each button */
+  display: flex; /* To align icon and text inside button */
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Space between icon and text within the button */
+  font-size: 16px; /* Slightly smaller font if needed */
+}
+
+/* Specific style for the '撮影開始' button if it needs to differ beyond color */
+.photo-action-button { /* Default color, can be overridden */
+  background-color: #28a745; /* Green color for "撮影開始" */
+  color: white;
+}
+.photo-action-button:hover {
+  background-color: #218838; /* Darker green */
+}
+
+.album-button {
+  background-color: #cccccc; /* Gray for "アルバム" button */
+  color: #000; /* Black text for contrast on gray */
+}
+
+.album-button:hover {
+  background-color: #b3b3b3; /* Darker gray for hover */
+}
