@@ -24,7 +24,7 @@ function HomePage() {
       </div>
 
       <Link to="/select-disaster" className="nav-button evaluation-start-button">🚀 評価開始</Link>
-      <Link to="/history" className="nav-button">履歴表示</Link>
+      <Link to="/history" className="nav-button history-button">📄 履歴表示</Link>
       <Link to="/settings" className="nav-button">設定</Link>
 
       <div className="history-preview">
