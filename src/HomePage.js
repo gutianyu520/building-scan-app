@@ -81,7 +81,7 @@ function HomePage() {
         {latestEvaluations.map((item, index) => (
           <div key={index} className="history-item">
             <span className={`status-dot ${getStatusDotClass(item.level)}`}></span>
-            {item.name} - {item.level} ({formatDate(item.date)})
+            {item.name} - {item.level}ランク ({formatDate(item.date)})
           </div>
         ))}
       </div>
