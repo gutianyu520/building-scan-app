@@ -19,7 +19,7 @@ function HomePage() {
       <p className="app-subtitle">AIに基づく災害評価システム</p>
 
       <div className="status-area">
-        <div className="status-item">ネットワーク状態: {networkStatus}</div>
+        <div className="status-item">📶 ネットワーク状態: {networkStatus}</div>
         <div className="status-item">GPS状態: {gpsStatus}</div>
       </div>
 
