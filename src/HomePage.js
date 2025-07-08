@@ -23,7 +23,7 @@ function HomePage() {
         <div className="status-item">GPS状態: {gpsStatus}</div>
       </div>
 
-      <Link to="/select-disaster" className="nav-button">評価開始</Link>
+      <Link to="/select-disaster" className="nav-button evaluation-start-button">🚀 評価開始</Link>
       <Link to="/history" className="nav-button">履歴表示</Link>
       <Link to="/settings" className="nav-button">設定</Link>
 
