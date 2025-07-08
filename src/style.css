@@ -103,6 +103,8 @@ body {
 }
 
 .history-item {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items in the center */
   padding: 8px;
   border-bottom: 1px solid #eee;
 }
@@ -110,6 +112,20 @@ body {
 .history-item:last-child {
   border-bottom: none;
 }
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0; /* Prevent dot from shrinking */
+}
+
+.status-green { background-color: green; }
+.status-orange { background-color: orange; }
+.status-yellow { background-color: yellow; }
+.status-red { background-color: red; }
+
 
 /* Placeholder for other page styles */
 .page-placeholder {
