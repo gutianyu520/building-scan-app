@@ -13,7 +13,7 @@ function BuildingPhotographyPage() {
 
       <div className="photography-frame">
         <div className="frame-content-wrapper">
-          <div className="frame-logo">🏢</div> {/* Using the same building icon for consistency */}
+          <div className="frame-logo">🏠</div> {/* Changed to small house icon */}
           <p className="frame-instruction">建物を中央に配置してください。</p>
         </div>
       </div>

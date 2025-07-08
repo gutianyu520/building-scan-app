@@ -222,7 +222,7 @@ body {
 .frame-instruction {
   font-size: 16px;
   font-weight: bold;
-  color: #003366; /* Darker blue for text */
+  color: #888888; /* Lighter gray color for instruction text */
 }
 
 /* Styles for Status Indicators on BuildingPhotographyPage */
