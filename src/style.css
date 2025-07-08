@@ -170,3 +170,55 @@ body {
   text-decoration: underline;
   color: #0056b3; /* Darker blue on hover */
 }
+
+/* Styles for BuildingPhotographyPage */
+.photography-frame {
+  width: 80vw; /* 4/5 of viewport width */
+  max-width: 500px; /* Max width to prevent it from being too large on desktop */
+  aspect-ratio: 3 / 2; /* Modern way to set aspect ratio (width / height) */
+
+  margin: 0 auto 20px auto; /* Center the frame and add bottom margin */
+  border: 3px dashed #007bff; /* Thick dashed blue border */
+  background-image:
+    linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
+    linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
+    linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+  background-size: 20px 20px; /* Size of the checkered squares */
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: #ffffff; /* Fallback white background */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for padding-bottom trick if content is absolute positioned */
+}
+
+/* Fallback for aspect-ratio for older browsers - not perfect, but an attempt */
+@supports not (aspect-ratio: 3 / 2) {
+  .photography-frame {
+    height: calc(500px * 2 / 3); /* Approximate height based on max-width */
+     /* If vw is smaller, this might not be 2/3 of 80vw. This is a limitation without container queries. */
+  }
+}
+
+
+.frame-content-wrapper {
+  text-align: center;
+  color: #333; /* Dark gray text for instructions, stands out on checkered bg */
+  padding: 10px; /* Add some padding so text isn't right at the edge */
+  /* background-color: rgba(255, 255, 255, 0.7);  Optional: slight white translucent bg for text if needed */
+  /* border-radius: 5px; */
+}
+
+.frame-logo {
+  font-size: 60px; /* Adjust size of the building icon */
+  color: #007bff; /* Blue color for the logo to match border */
+  margin-bottom: 10px;
+}
+
+.frame-instruction {
+  font-size: 16px;
+  font-weight: bold;
+  color: #003366; /* Darker blue for text */
+}
