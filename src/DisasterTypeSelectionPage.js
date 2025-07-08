@@ -36,7 +36,7 @@ function DisasterTypeSelectionPage() {
         ))}
       </div>
 
-      <Link to="/" className="nav-button" style={{backgroundColor: '#6c757d', marginTop: '30px', width: 'auto', padding: '10px 20px'}}>ホームページに戻る</Link>
+      <Link to="/" className="simple-link" style={{ marginTop: '30px', display: 'inline-block' }}>ホームページに戻る</Link>
     </div>
   );
 }

@@ -158,3 +158,15 @@ body {
 .disaster-type-button:hover {
   background-color: #357ABD; /* Darker shade for hover */
 }
+
+/* Style for simple text links */
+.simple-link {
+  color: #007bff; /* Standard link blue */
+  text-decoration: none;
+  padding: 5px 0; /* Add some padding for easier clicking */
+}
+
+.simple-link:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Darker blue on hover */
+}
