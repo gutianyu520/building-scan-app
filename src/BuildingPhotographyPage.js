@@ -55,6 +55,11 @@ function BuildingPhotographyPage() {
         </button>
       </div>
 
+      <div className="reminder-banner">
+        <span role="img" aria-label="warning icon" className="reminder-icon">⚠️</span>
+        <span className="reminder-text">建物の全体を画面に入れてください。障害物を避けてください。</span>
+      </div>
+
       <Link to="/select-disaster" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>災害種類選択に戻る</Link>
     </div>
   );

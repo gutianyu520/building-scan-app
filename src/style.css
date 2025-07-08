@@ -294,3 +294,27 @@ body {
 .album-button:hover {
   background-color: #b3b3b3; /* Darker gray for hover */
 }
+
+/* Styles for Reminder Banner on BuildingPhotographyPage */
+.reminder-banner {
+  background-color: #fff3cd; /* Bootstrap's light yellow for warnings */
+  color: #856404; /* Bootstrap's dark yellow text color for warnings */
+  border: 1px solid #ffeeba; /* Bootstrap's border color for warnings */
+  padding: 10px 15px;
+  margin-top: 25px; /* Space above the banner */
+  border-radius: 4px;
+  display: flex;
+  align-items: center; /* Vertically align icon and text */
+  text-align: left; /* Ensure text is left-aligned */
+  font-size: 14px;
+}
+
+.reminder-icon {
+  font-size: 20px; /* Larger icon */
+  margin-right: 10px; /* Space between icon and text */
+  line-height: 1; /* Adjust line height for better vertical alignment if needed */
+}
+
+.reminder-text {
+  line-height: 1.4; /* Improve readability of multi-line text if it wraps */
+}
