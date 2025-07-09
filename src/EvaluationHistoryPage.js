@@ -113,6 +113,15 @@ function EvaluationHistoryPage() {
       </div>
        {/* Link to go back to Home, if needed. For now, focus on page content. */}
        {/* <Link to="/" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>ホームページへ</Link> */}
+
+      <div className="history-actions-container">
+        <button className="history-action-btn" onClick={() => alert('統計表示機能は未実装です。')}>
+          <span role="img" aria-label="statistics icon">📈</span> 統計表示
+        </button>
+        <button className="history-action-btn" onClick={() => alert('データ导出機能は未実装です。')}>
+          <span role="img" aria-label="export icon">📤</span> データ导出
+        </button>
+      </div>
     </div>
   );
 }

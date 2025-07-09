@@ -726,3 +726,39 @@ body {
   color: #6c757d;
   font-size: 14px; /* Slightly reduced */
 }
+
+/* Styles for action buttons on EvaluationHistoryPage */
+.history-actions-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+  gap: 12px; /* Space between the two buttons */
+  margin-top: 20px; /* Space above the button container */
+  margin-bottom: 10px; /* Space below the button container */
+}
+
+.history-action-btn {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px; /* Generous padding for better click area */
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex; /* To allow icon and text to align and width to fit content */
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  width: fit-content; /* Width based on content (icon + text + padding) */
+  min-width: 180px; /* Minimum width to ensure they look substantial */
+  justify-content: center; /* Center content if text is short */
+  transition: background-color 0.2s ease;
+}
+
+.history-action-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.history-action-btn span[role="img"] {
+  font-size: 18px; /* Icon size */
+}
