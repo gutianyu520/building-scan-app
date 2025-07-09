@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import Modal from './Modal'; // Import Modal component
 // import { Link } from 'react-router-dom'; // If needed for a back button
 
 function SettingsPage() {
+  const navigate = useNavigate(); // Initialize navigate
+
   // State for each setting
   const [photoQuality, setPhotoQuality] = useState('高'); // Default '高'
   const [gpsAutoRecord, setGpsAutoRecord] = useState(true);
@@ -10,18 +14,30 @@ function SettingsPage() {
   const [dataSaverMode, setDataSaverMode] = useState(false); // Assuming false means normal data usage
   const [evaluationCompleteNotification, setEvaluationCompleteNotification] = useState(true);
   const [highRiskAlert, setHighRiskAlert] = useState(true);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
-  const handleSaveSettings = () => {
-    // Placeholder for save logic
-    alert('設定が保存されました！ (Settings Saved! - Placeholder)\n' +
-      `写真品質: ${photoQuality}\n` +
-      `GPS自動記録: ${gpsAutoRecord}\n` +
-      `撮影ガイドライン表示: ${showGuidelines}\n` +
-      `Wi-Fi優先アップロード: ${preferWifiUpload}\n` +
-      `データ通信モード: ${dataSaverMode}\n` +
-      `評価完了通知: ${evaluationCompleteNotification}\n` +
-      `高リスク警告: ${highRiskAlert}`
-    );
+  const handleOpenConfirmModal = () => {
+    setIsConfirmModalOpen(true);
+  };
+
+  const handleCloseConfirmModal = () => {
+    setIsConfirmModalOpen(false);
+  };
+
+  const handleConfirmSave = () => {
+    // Placeholder for actual save logic
+    console.log('Settings saved:', {
+      photoQuality,
+      gpsAutoRecord,
+      showGuidelines,
+      preferWifiUpload,
+      dataSaverMode,
+      evaluationCompleteNotification,
+      highRiskAlert
+    });
+    setIsConfirmModalOpen(false);
+    alert('設定が保存されました！'); // Optional: simple confirmation before navigating
+    navigate('/'); // Navigate to HomePage
   };
 
   return (
@@ -117,10 +133,19 @@ function SettingsPage() {
       </div>
 
       <div className="settings-save-button-container">
-        <button className="nav-button settings-save-button" onClick={handleSaveSettings}>
+        <button className="nav-button settings-save-button" onClick={handleOpenConfirmModal}> {/* Changed to open modal */}
           <span role="img" aria-label="save icon">💾</span> 設定保存
         </button>
       </div>
+
+      <Modal
+        isOpen={isConfirmModalOpen}
+        onClose={handleCloseConfirmModal}
+        onConfirm={handleConfirmSave}
+        message="上記の設定を保存しますか？"
+        confirmText="確認"
+        cancelText="キャンセル"
+      />
 
       {/* Optional: Link to go back to Home */}
       {/* <Link to="/" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>ホームページへ</Link> */}
