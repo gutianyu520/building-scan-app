@@ -1,11 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Modal from './Modal'; // Import the Modal component
 
 function BuildingPhotographyPage() {
-  // For aspect ratio, we'll set width in CSS and calculate height here,
-  // or more robustly, use padding-bottom trick in CSS if content allows.
-  // For simplicity in JS, if we set width to 80vw, height would be (80vw * 2/3).
-  // However, it's better to handle this primarily in CSS.
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleOpenModal = () => {
+    // In a real app, this would be triggered after a photo is taken or selected.
+    // For now, we trigger it directly on button click.
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleConfirmPhoto = () => {
+    setIsModalOpen(false);
+    navigate('/ai-analysis'); // Navigate to AI Analysis Page
+  };
 
   return (
     <div className="page-container">
@@ -43,17 +57,26 @@ function BuildingPhotographyPage() {
       <div className="action-buttons-container">
         <button
           className="nav-button photo-action-button"
-          onClick={() => alert('撮影機能は未実装です。')}
+          onClick={handleOpenModal} // Open modal
         >
           <span role="img" aria-label="camera icon">📷</span> 撮影開始
         </button>
         <button
           className="nav-button photo-action-button album-button"
-          onClick={() => alert('アルバム機能は未実装です。')}
+          onClick={handleOpenModal} // Open modal
         >
           <span role="img" aria-label="album icon">🖼️</span> アルバム
         </button>
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmPhoto}
+        message="この写真を使用しますか？"
+        confirmText="確認"
+        cancelText="キャンセル"
+      />
 
       <div className="reminder-banner">
         <span role="img" aria-label="warning icon" className="reminder-icon">⚠️</span>
