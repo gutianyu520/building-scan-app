@@ -612,3 +612,117 @@ body {
 .cancel-button:hover {
   background-color: #545b62;
 }
+
+/* Styles for EvaluationHistoryPage */
+.evaluation-history-page .page-title {
+  margin-bottom: 20px;
+  font-size: 20px; /* Consistent with other page titles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evaluation-history-page .page-title span[role="img"] {
+  margin-right: 8px;
+  font-size: 24px; /* Consistent icon size */
+}
+
+.tabs-container {
+  display: flex;
+  /* justify-content: space-around; /* This might spread them too much if only 3 */
+  margin-bottom: 15px; /* Reduced margin */
+  border-bottom: 1px solid #dee2e6; /* Lighter separator */
+}
+
+.tab-button {
+  padding: 8px 12px; /* Reduced padding */
+  font-size: 15px; /* Reduced font size */
+  color: #495057;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  flex-grow: 1;
+  text-align: center;
+  margin-right: 5px; /* Small gap between tabs */
+}
+.tab-button:last-child {
+  margin-right: 0;
+}
+
+.tab-button:hover {
+  color: #0056b3;
+  background-color: #f8f9fa; /* Light hover effect */
+}
+
+.tab-button.active {
+  color: white;
+  background-color: #007bff; /* Blue background for active tab */
+  border-bottom-color: #0056b3; /* Darker blue underline/border */
+  font-weight: bold;
+}
+
+.history-list-container {
+  /* Max height for approx 3 items. Let's estimate item height:
+     Name (15px) + Time (12px) + gap (2px) = ~29px for left block.
+     Padding (10px*2=20px) + Border (1px) = ~21px.
+     Total per item ~50px. So for 3 items = 150px. Add some buffer.
+  */
+  max-height: 170px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0; /* Slightly lighter border */
+  border-radius: 5px;
+  /* padding: 0 5px; /* Padding inside the scrollable container, applied to items if needed */
+}
+
+.history-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0; /* Lighter separator */
+  background-color: white;
+}
+
+.history-list-item:last-child {
+  border-bottom: none;
+}
+
+.item-details-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-right: 10px; /* Ensure space between left details and right grade */
+}
+
+.item-building-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.3;
+}
+
+.item-evaluation-time {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.3;
+}
+
+.item-evaluation-grade {
+  font-size: 14px; /* Slightly smaller grade text */
+  font-weight: bold;
+  color: #007bff;
+  padding: 4px 8px; /* Reduced padding */
+  background-color: #e7f3fe; /* Light blue background */
+  border-radius: 4px;
+  white-space: nowrap; /* Prevent grade text from wrapping */
+}
+
+.no-history-message {
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px; /* Slightly reduced */
+}
