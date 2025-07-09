@@ -11,10 +11,12 @@ function AIAnalysisPage() {
     { id: 4, label: "マルチモーダルLLM評価", percentage: 25 } // Multimodal LLM Evaluation
   ];
 
-  const detectedResults = [
-    "結果項目1: 詳細...", // Result Item 1: Details...
-    "結果項目2: 詳細...", // Result Item 2: Details...
-    "結果項目3: 詳細..."  // Result Item 3: Details...
+  const detectedFeatures = [
+    "壁のひび割れ：3箇所",    // Wall cracks: 3 locations
+    "建物の傾斜：軽微",        // Building tilt: Slight
+    "表面の損傷：中程度",      // Surface damage: Moderate
+    "鉄筋の露出：あり",        // Exposed rebar: Yes
+    "窓ガラスの破損：多数"     // Window glass breakage: Many
   ];
 
   const estimatedTimeRemaining = "約5分"; // Approx. 5 minutes
@@ -33,12 +35,12 @@ function AIAnalysisPage() {
       </div>
 
       <div className="results-section">
-        <h3 className="results-title">検出結果</h3>
+        <h3 className="results-title">検出特徴</h3> {/* Changed title */}
         <ul className="results-list">
-          {detectedResults.map((result, index) => (
-            <li key={index} className="results-list-item">{result}</li>
+          {detectedFeatures.map((feature, index) => (
+            <li key={index} className="results-list-item">{feature}</li>
           ))}
-          {detectedResults.length === 0 && <li className="results-list-item">結果はまだありません。</li>}
+          {detectedFeatures.length === 0 && <li className="results-list-item">特徴はまだ検出されていません。</li>} {/* Updated empty message */}
         </ul>
       </div>
 
