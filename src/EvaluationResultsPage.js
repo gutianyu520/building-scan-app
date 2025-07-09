@@ -28,7 +28,7 @@ function EvaluationResultsPage() {
       {/* Summary Area - Placeholder Structure */}
       <div className="summary-area">
         <p>危険度：{dangerLevel}</p>
-        <p>アドバイス：{advice}</p>
+        <p>提案：{advice}</p> {/* Changed "アドバイス" to "提案" */}
       </div>
 
       {/* Quantitative Indicators - Placeholder Structure */}
