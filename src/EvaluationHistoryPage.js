@@ -118,8 +118,8 @@ function EvaluationHistoryPage() {
         <button className="history-action-btn" onClick={() => alert('統計表示機能は未実装です。')}>
           <span role="img" aria-label="statistics icon">📈</span> 統計表示
         </button>
-        <button className="history-action-btn" onClick={() => alert('データ导出機能は未実装です。')}>
-          <span role="img" aria-label="export icon">📤</span> データ导出
+        <button className="history-action-btn" onClick={() => alert('データエクスポート機能は未実装です。')}>
+          <span role="img" aria-label="export icon">📤</span> エクスポート
         </button>
       </div>
     </div>
