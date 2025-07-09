@@ -414,6 +414,84 @@ body {
   color: #6c757d;
 }
 
+/* Styles for EvaluationResultsPage */
+.evaluation-results-page .page-title {
+  margin-bottom: 20px; /* Consistent with other compacted page titles */
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evaluation-results-page .page-title span[role="img"] {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+.summary-area {
+  background-color: #fff3cd; /* Yellow background */
+  color: #856404; /* Dark yellow/brown text */
+  border: 1px solid #ffeeba;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.summary-area p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.summary-area p:first-child {
+  font-weight: bold; /* Make "危険度：Aランク" bold */
+}
+
+.quantitative-indicators-section {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.quantitative-indicators-section .section-title { /* Specific title for this section */
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff; /* Blue underline for section title */
+  padding-bottom: 5px;
+}
+
+.quantitative-indicators-section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.quantitative-indicators-section li {
+  font-size: 15px;
+  color: #444;
+  padding: 8px 5px; /* Add a bit more padding */
+  border-bottom: 1px solid #eee; /* Lighter separator */
+}
+
+.quantitative-indicators-section li:last-child {
+  border-bottom: none;
+}
+
+.map-link-section {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: center; /* Center the link */
+}
+
+.proceed-button { /* For 'Proceed to Evaluation Results' button */
+  background-color: #17a2b8 !important; /* Teal color, using !important if needed to override .nav-button */
+  color: white;
+}
+
+.proceed-button:hover {
+  background-color: #138496 !important; /* Darker teal */
+}
+
 /* Styles for Modal */
 .modal-overlay {
   position: fixed;
