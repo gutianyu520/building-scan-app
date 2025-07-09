@@ -727,6 +727,103 @@ body {
   font-size: 14px; /* Slightly reduced */
 }
 
+/* Styles for SettingsPage */
+.settings-page .page-title {
+  margin-bottom: 25px; /* More space for settings page title */
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-page .page-title span[role="img"] {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+.settings-category {
+  margin-bottom: 25px; /* Space between categories */
+  text-align: left; /* Align category content to the left */
+  border: 1px solid #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+}
+
+.settings-category-title {
+  font-size: 18px;
+  color: #007bff; /* Blue for category titles */
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #007bff;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between; /* Align label and control */
+  align-items: center;
+  padding: 10px 0; /* Vertical padding for each setting item */
+  border-bottom: 1px solid #f0f0f0; /* Separator line */
+  font-size: 15px;
+  color: #333;
+}
+
+.setting-item:last-child {
+  border-bottom: none; /* No line for the last item in a category */
+}
+
+.setting-item label {
+  margin-right: 10px; /* Space between label and control, or checkbox and its label */
+  flex-shrink: 0; /* Prevent label from shrinking too much */
+}
+
+/* Specific for checkbox items where checkbox is first */
+.checkbox-item {
+  justify-content: flex-start; /* Align checkbox to the left */
+}
+
+.settings-checkbox {
+  margin-right: 10px; /* Space between checkbox and its direct label */
+  width: 18px; /* Custom size for checkbox */
+  height: 18px;
+  accent-color: #007bff; /* Modern way to color checkbox */
+}
+
+.settings-select {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  background-color: white;
+  font-size: 15px;
+  min-width: 120px; /* Ensure select has some width */
+  flex-grow: 1; /* Allow select to take available space if needed */
+  max-width: 180px; /* But not too much space */
+}
+
+.settings-save-button-container {
+  margin-top: 30px; /* Space above the save button */
+  text-align: center; /* Center the button if it's not full width */
+}
+
+.settings-save-button {
+  /* Uses .nav-button for base, but we want it centered and potentially specific width */
+  /* .nav-button default is width 66.66% and margin auto, which is fine */
+  background-color: #007bff; /* Blue background */
+  color: white;
+  /* Add icon specific alignment if .nav-button doesn't handle it well */
+  display: inline-flex; /* To align icon and text if needed */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  /* width: auto; /* if we want it to size to content + padding */
+  /* padding: 10px 25px; /* Example of more specific padding */
+}
+
+.settings-save-button:hover {
+  background-color: #0056b3;
+}
+
 /* Styles for action buttons on EvaluationHistoryPage */
 .history-actions-container {
   display: flex;
