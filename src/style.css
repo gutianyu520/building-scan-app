@@ -319,6 +319,102 @@ body {
   line-height: 1.4; /* Improve readability of multi-line text if it wraps */
 }
 
+/* Styles for AIAnalysisPage */
+.ai-analysis-page .page-title { /* Targeting h2 within ai-analysis-page if specific styling needed */
+  margin-bottom: 25px;
+  font-size: 22px; /* Slightly smaller than main app title if desired */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-analysis-page .page-title span[role="img"] { /* If icon is part of h2 */
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+
+.progress-section {
+  margin-bottom: 30px;
+}
+
+.progress-item {
+  margin-bottom: 18px;
+}
+
+.progress-label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Styles for ProgressBar component */
+.progress-bar-container {
+  width: 100%;
+  background-color: #e9ecef; /* Light gray background for the bar */
+  border-radius: 6px;
+  height: 22px; /* Height of the progress bar */
+  overflow: hidden; /* Ensures the filled part stays within rounded corners */
+  border: 1px solid #ced4da;
+}
+
+.progress-bar-filled {
+  background-color: #007bff; /* Blue color for the filled part */
+  height: 100%;
+  border-radius: 4px; /* Slightly smaller radius for the filled part to look inset */
+  transition: width 0.4s ease-in-out; /* Smooth transition for width changes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+}
+
+.results-section {
+  background-color: #e7f3fe; /* Light blue background */
+  border: 1px solid #b3d7f8;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.results-title {
+  font-size: 18px;
+  color: #004085; /* Darker blue for title */
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.results-list {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.results-list-item {
+  font-size: 15px;
+  color: #1c5a90;
+  padding: 6px 0;
+  border-bottom: 1px dashed #cce0f5; /* Lighter dashed line between items */
+}
+
+.results-list-item:last-child {
+  border-bottom: none;
+}
+
+.eta-section {
+  margin-top: 20px; /* Ensure it's below results or other content */
+  text-align: center; /* Center the ETA text */
+}
+
+.eta-text {
+  font-size: 15px;
+  color: #6c757d; /* Gray color */
+}
+
 /* Styles for Modal */
 .modal-overlay {
   position: fixed;
