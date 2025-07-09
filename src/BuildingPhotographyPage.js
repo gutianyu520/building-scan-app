@@ -1,0 +1,91 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Modal from './Modal'; // Import the Modal component
+
+function BuildingPhotographyPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleOpenModal = () => {
+    // In a real app, this would be triggered after a photo is taken or selected.
+    // For now, we trigger it directly on button click.
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleConfirmPhoto = () => {
+    setIsModalOpen(false);
+    navigate('/ai-analysis'); // Navigate to AI Analysis Page
+  };
+
+  return (
+    <div className="page-container">
+      <h2 style={{ marginBottom: '20px' }}>📷 建物撮影</h2>
+
+      <div className="photography-frame">
+        <div className="frame-content-wrapper">
+          <div className="frame-logo">🏠</div> {/* Changed to small house icon */}
+          <p className="frame-instruction">建物を中央に配置してください。</p>
+        </div>
+      </div>
+
+      {/* Placeholder for actual camera functionality/upload button will be moved below status grid */}
+      <div className="status-grid">
+        <div className="status-indicator">
+          <span role="img" aria-label="position">📍</span> 位置: <span className="status-value">自動検出</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="sharpness">👁️‍🗨️</span> 鮮明度: <span className="status-value">良好</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="brightness">💡</span> 明るさ: <span className="status-value">適正</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="distance">📏</span> 距離: <span className="status-value">5m</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="angle">📐</span> 角度: <span className="status-value">正面</span>
+        </div>
+        <div className="status-indicator">
+          <span role="img" aria-label="focus">🎯</span> 焦点: <span className="status-value">合致</span>
+        </div>
+      </div>
+
+      <div className="action-buttons-container">
+        <button
+          className="nav-button photo-action-button"
+          onClick={handleOpenModal} // Open modal
+        >
+          <span role="img" aria-label="camera icon">📷</span> 撮影開始
+        </button>
+        <button
+          className="nav-button photo-action-button album-button"
+          onClick={handleOpenModal} // Open modal
+        >
+          <span role="img" aria-label="album icon">🖼️</span> アルバム
+        </button>
+      </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmPhoto}
+        message="この写真を使用しますか？"
+        confirmText="確認"
+        cancelText="キャンセル"
+      />
+
+      <div className="reminder-banner">
+        <span role="img" aria-label="warning icon" className="reminder-icon">⚠️</span>
+        <span className="reminder-text">建物の全体を画面に入れてください。障害物を避けてください。</span>
+      </div>
+
+      <Link to="/select-disaster" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>災害種類選択に戻る</Link>
+    </div>
+  );
+}
+
+export default BuildingPhotographyPage;
