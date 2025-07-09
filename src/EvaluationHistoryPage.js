@@ -4,29 +4,71 @@ import React, { useState } from 'react';
 function EvaluationHistoryPage() {
   const [activeTab, setActiveTab] = useState('すべて'); // 'すべて', '今週', '今月'
 
-  // Placeholder mock data - ensure more than 3 items to test scrolling
+  // Helper to format date as YYYY/MM/DD HH:MM
+  const formatDate = (date) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    const h = String(date.getHours()).padStart(2, '0');
+    const min = String(date.getMinutes()).padStart(2, '0');
+    return `${y}/${m}/${d} ${h}:${min}`;
+  };
+
+  // Create some dynamic dates for mock data
+  const today = new Date();
+  const twoDaysAgo = new Date(today);
+  twoDaysAgo.setDate(today.getDate() - 2); // Definitely this week
+
+  const eightDaysAgo = new Date(today);
+  eightDaysAgo.setDate(today.getDate() - 8); // Likely last week, but this month (depends on current day)
+
+  const fifteenDaysAgo = new Date(today);
+  fifteenDaysAgo.setDate(today.getDate() - 15); // Possibly this month or last month
+
+  const thirtyFiveDaysAgo = new Date(today);
+  thirtyFiveDaysAgo.setDate(today.getDate() - 35); // Likely last month
+
+  const sixtyDaysAgo = new Date(today);
+  sixtyDaysAgo.setDate(today.getDate() - 60); // Definitely older
+
+  // Updated mock data with varied dates
   const allHistoryItems = [
-    { id: 1, buildingName: "東京タワー", evaluationTime: "2024/03/15 10:30", evaluationGrade: "Aランク" },
-    { id: 2, buildingName: "スカイツリー", evaluationTime: "2024/03/14 14:00", evaluationGrade: "Bランク" },
-    { id: 3, buildingName: "渋谷スクランブルスクエア", evaluationTime: "2024/03/13 09:15", evaluationGrade: "Aランク" },
-    { id: 4, buildingName: "六本木ヒルズ森タワー", evaluationTime: "2024/03/10 17:45", evaluationGrade: "Cランク" },
-    { id: 5, buildingName: "都庁第一本庁舎", evaluationTime: "2024/02/28 11:00", evaluationGrade: "Aランク" },
-    { id: 6, buildingName: "レインボーブリッジ", evaluationTime: "2024/02/25 16:20", evaluationGrade: "Bランク" },
+    { id: 1, buildingName: "東京タワー", evaluationTime: formatDate(today), evaluationGrade: "Aランク" },
+    { id: 2, buildingName: "スカイツリー", evaluationTime: formatDate(twoDaysAgo), evaluationGrade: "Bランク" },
+    { id: 3, buildingName: "渋谷スクランブルスクエア", evaluationTime: formatDate(eightDaysAgo), evaluationGrade: "Aランク" },
+    { id: 4, buildingName: "六本木ヒルズ森タワー", evaluationTime: formatDate(fifteenDaysAgo), evaluationGrade: "Cランク" },
+    { id: 5, buildingName: "都庁第一本庁舎", evaluationTime: formatDate(thirtyFiveDaysAgo), evaluationGrade: "Aランク" },
+    { id: 6, buildingName: "レインボーブリッジ", evaluationTime: formatDate(sixtyDaysAgo), evaluationGrade: "Bランク" },
+    { id: 7, buildingName: "東京駅", evaluationTime: "2023/01/10 12:00", evaluationGrade: "Cランク" }, // Much older
   ];
 
   // Basic filtering logic (can be expanded later)
   const getFilteredItems = () => {
-    // For now, all tabs show all items.
-    // Actual filtering by week/month would require date manipulation.
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth(); // 0-11
+
+    // Get the date for the start of the current week (assuming Sunday is the first day)
+    const startOfWeek = new Date(now);
+    startOfWeek.setDate(now.getDate() - now.getDay());
+    startOfWeek.setHours(0, 0, 0, 0);
+
+    // Get the date for the end of the current week (assuming Saturday is the last day)
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+    endOfWeek.setHours(23, 59, 59, 999);
+
     switch (activeTab) {
       case '今週':
-        // Placeholder: return first 2 for demo, replace with actual date filtering
-        // return allHistoryItems.filter(item => /* item is in this week */);
-        return allHistoryItems; // Show all for now
+        return allHistoryItems.filter(item => {
+          const itemDate = new Date(item.evaluationTime.split(' ')[0]); // Get YYYY/MM/DD part
+          return itemDate >= startOfWeek && itemDate <= endOfWeek;
+        });
       case '今月':
-        // Placeholder: return first 4 for demo, replace with actual date filtering
-        // return allHistoryItems.filter(item => /* item is in this month */);
-        return allHistoryItems; // Show all for now
+        return allHistoryItems.filter(item => {
+          const itemDate = new Date(item.evaluationTime.split(' ')[0]);
+          return itemDate.getFullYear() === currentYear && itemDate.getMonth() === currentMonth;
+        });
       case 'すべて':
       default:
         return allHistoryItems;
