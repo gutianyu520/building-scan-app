@@ -119,7 +119,7 @@ function EvaluationHistoryPage() {
           <span role="img" aria-label="statistics icon">📈</span> 統計表示
         </button>
         <button className="history-action-btn" onClick={() => alert('データエクスポート機能は未実装です。')}>
-          <span role="img" aria-label="export icon">📤</span> エクスポート
+          <span role="img" aria-label="export icon">📤</span> データエクスポート
         </button>
       </div>
     </div>
