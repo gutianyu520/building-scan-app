@@ -492,6 +492,62 @@ body {
   background-color: #138496 !important; /* Darker teal */
 }
 
+/* Styles for Buttons on EvaluationResultsPage */
+.result-actions-row {
+  display: flex;
+  justify-content: space-between; /* Distribute buttons evenly */
+  margin-top: 25px; /* Space above the button row */
+  margin-bottom: 15px; /* Space below the button row */
+  gap: 10px; /* Gap between buttons */
+}
+
+.result-action-button {
+  /* Base styling from .nav-button (padding, border-radius etc.) */
+  /* Override width from .nav-button to fit three buttons */
+  width: 31%; /* Approx 1/3, allowing for gaps */
+  max-width: 120px; /* Max width for each small button */
+  font-size: 14px; /* Slightly smaller font for these action buttons */
+  background-color: #007bff; /* Blue background */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px; /* Space between icon and text */
+  padding: 8px 10px; /* Adjust padding if needed */
+}
+
+.result-action-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.confirm-results-button-container {
+  margin-bottom: 20px; /* Space below the green button */
+  /* This container will by default take full available width within its parent's content box. */
+  /* The .evaluation-results-page is inside .page-container (padding 20px) and .container (padding 20px, max-width 400px) */
+  /* So, this container's width will match the content area width available to .result-actions-row */
+}
+
+.confirm-final-button {
+  /* .nav-button provides base styling like padding, border-radius etc. */
+  /* Override .nav-button's width and margin for this specific full-width button */
+  width: 100%;
+  margin: 10px 0; /* Override auto horizontal margins from .nav-button */
+  max-width: none; /* Ensure it can go full width if .nav-button had a max-width */
+
+  background-color: #28a745; /* Green background */
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.confirm-final-button:hover {
+  background-color: #218838; /* Darker green */
+}
+
+
 /* Styles for Modal */
 .modal-overlay {
   position: fixed;

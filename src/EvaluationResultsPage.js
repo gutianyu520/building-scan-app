@@ -62,6 +62,24 @@ function EvaluationResultsPage() {
         />
       </Modal>
 
+      <div className="result-actions-row">
+        <button className="nav-button result-action-button" onClick={() => alert('保存機能は未実装です。')}>
+          <span role="img" aria-label="save icon">💾</span> 保存
+        </button>
+        <button className="nav-button result-action-button" onClick={() => alert('共有機能は未実装です。')}>
+          <span role="img" aria-label="share icon">🔗</span> 共有
+        </button>
+        <button className="nav-button result-action-button" onClick={() => alert('報告機能は未実装です。')}>
+          <span role="img" aria-label="report icon">📄</span> 報告
+        </button>
+      </div>
+
+      <div className="confirm-results-button-container">
+        <button className="nav-button confirm-final-button" onClick={() => alert('結果確定処理は未実装です。')}>
+          <span role="img" aria-label="confirm icon">✔️</span> 結果確定
+        </button>
+      </div>
+
       {/* Navigation (e.g., back to home or dashboard) can be added later if needed */}
       {/* <Link to="/" className="simple-link" style={{ marginTop: '30px', display: 'inline-block' }}>ホームページへ</Link> */}
     </div>
