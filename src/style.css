@@ -319,86 +319,85 @@ body {
   line-height: 1.4; /* Improve readability of multi-line text if it wraps */
 }
 
-/* Styles for AIAnalysisPage */
-.ai-analysis-page .page-title { /* Targeting h2 within ai-analysis-page if specific styling needed */
-  margin-bottom: 25px;
-  font-size: 22px; /* Slightly smaller than main app title if desired */
+/* Styles for AIAnalysisPage - Compacted */
+.ai-analysis-page .page-title {
+  margin-bottom: 15px; /* Reduced */
+  font-size: 20px; /* Reduced */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ai-analysis-page .page-title span[role="img"] { /* If icon is part of h2 */
-    margin-right: 10px;
-    font-size: 28px;
+.ai-analysis-page .page-title span[role="img"] {
+    margin-right: 8px; /* Slightly reduced */
+    font-size: 24px; /* Reduced */
 }
 
-
 .progress-section {
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduced */
 }
 
 .progress-item {
-  margin-bottom: 18px;
+  margin-bottom: 10px; /* Reduced */
 }
 
 .progress-label {
   display: block;
-  font-size: 16px;
+  font-size: 14px; /* Reduced */
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 5px; /* Reduced */
   text-align: left;
 }
 
-/* Styles for ProgressBar component */
+/* Styles for ProgressBar component - Compacted */
 .progress-bar-container {
   width: 100%;
-  background-color: #e9ecef; /* Light gray background for the bar */
-  border-radius: 6px;
-  height: 22px; /* Height of the progress bar */
-  overflow: hidden; /* Ensures the filled part stays within rounded corners */
+  background-color: #e9ecef;
+  border-radius: 5px; /* Slightly reduced */
+  height: 18px; /* Reduced */
+  overflow: hidden;
   border: 1px solid #ced4da;
 }
 
 .progress-bar-filled {
-  background-color: #007bff; /* Blue color for the filled part */
+  background-color: #007bff;
   height: 100%;
-  border-radius: 4px; /* Slightly smaller radius for the filled part to look inset */
-  transition: width 0.4s ease-in-out; /* Smooth transition for width changes */
+  border-radius: 3px; /* Slightly reduced */
+  transition: width 0.4s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 12px;
+  font-size: 10px; /* Reduced, if text is shown in progress bar */
 }
 
 .results-section {
-  background-color: #e7f3fe; /* Light blue background */
+  background-color: #e7f3fe;
   border: 1px solid #b3d7f8;
-  padding: 15px 20px;
-  border-radius: 6px;
-  margin-bottom: 30px;
+  padding: 10px 15px; /* Reduced */
+  border-radius: 5px; /* Slightly reduced */
+  margin-bottom: 20px; /* Reduced */
   text-align: left;
 }
 
 .results-title {
-  font-size: 18px;
-  color: #004085; /* Darker blue for title */
+  font-size: 16px; /* Reduced */
+  color: #004085;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduced */
 }
 
 .results-list {
-  list-style-type: none; /* Remove default bullet points */
+  list-style-type: none;
   padding-left: 0;
   margin-bottom: 0;
 }
 
 .results-list-item {
-  font-size: 15px;
+  font-size: 13px; /* Reduced */
   color: #1c5a90;
-  padding: 6px 0;
-  border-bottom: 1px dashed #cce0f5; /* Lighter dashed line between items */
+  padding: 4px 0; /* Reduced */
+  border-bottom: 1px dashed #cce0f5;
 }
 
 .results-list-item:last-child {
@@ -406,13 +405,13 @@ body {
 }
 
 .eta-section {
-  margin-top: 20px; /* Ensure it's below results or other content */
-  text-align: center; /* Center the ETA text */
+  margin-top: 15px; /* Reduced */
+  text-align: center;
 }
 
 .eta-text {
-  font-size: 15px;
-  color: #6c757d; /* Gray color */
+  font-size: 13px; /* Reduced */
+  color: #6c757d;
 }
 
 /* Styles for Modal */

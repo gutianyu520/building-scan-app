@@ -46,7 +46,7 @@ function AIAnalysisPage() {
         <p className="eta-text">予測残り分析時間: {estimatedTimeRemaining}</p>
       </div>
 
-      <Link to="/building-photography" className="simple-link" style={{ marginTop: '30px', display: 'inline-block' }}>建物撮影に戻る</Link>
+      <Link to="/building-photography" className="simple-link" style={{ marginTop: '20px', display: 'inline-block' }}>建物撮影に戻る</Link>
     </div>
   );
 }
